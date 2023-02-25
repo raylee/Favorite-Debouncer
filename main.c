@@ -49,7 +49,7 @@ What I like:
 #define BUTTISRELEASED	bit_is_set(PIND, BUTT)
 #define MINREADTIME    5  // multiplied by the number of valid lows is the minimum debounce time
 #define NUMLOWS        5  // number of valid lows you want to detect
-#define BOUNCENUM      (2^NUMLOWS)  // the actual number checked for in the debounce routine
+#define BOUNCENUM      ((1<<NUMLOWS)-1)  // the actual number checked for in the debounce routine
 
 //---------ISR Variables--------------
 volatile uint32_t milliseconds = 0;
